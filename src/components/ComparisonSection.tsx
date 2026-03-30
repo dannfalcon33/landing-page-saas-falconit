@@ -3,9 +3,12 @@ import { Check, X } from "lucide-react";
 import { motion } from "motion/react";
 import { Logo } from "./Logo";
 
+import { FloatingSpheres } from "./FloatingSpheres";
+
 export const ComparisonSection = () => {
   return (
-    <section className="py-24 bg-[#0B1622]">
+    <section className="py-24 bg-black relative overflow-hidden">
+      <FloatingSpheres />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

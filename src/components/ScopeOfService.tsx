@@ -1,13 +1,15 @@
 import React from "react";
 import { motion } from "motion/react";
 import { features } from "../constant";
+import { FloatingSpheres } from "./FloatingSpheres";
 
 export const ScopeOfService = () => {
   return (
     <section
       id="solutions"
-      className="py-24 bg-[#0B1622] relative overflow-hidden"
+      className="py-24 bg-black relative overflow-hidden"
     >
+      <FloatingSpheres />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

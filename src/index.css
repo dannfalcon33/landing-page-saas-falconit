@@ -27,6 +27,29 @@
     15%, 100% { transform: translateX(100vw) skewX(-20deg); }
   }
   
+  .animate-shine-8s {
+    animation: logo-shine 8s infinite linear;
+  }
+  @keyframes logo-shine {
+    0% { transform: translateX(-150%) skewX(-20deg); }
+    10%, 100% { transform: translateX(200%) skewX(-20deg); }
+  }
+  
+  .animate-float-slow {
+    animation: float 15s ease-in-out infinite;
+  }
+  .animate-float-medium {
+    animation: float 10s ease-in-out infinite;
+  }
+  .animate-float-fast {
+    animation: float 7s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(30px, -50px); }
+    66% { transform: translate(-20px, 20px); }
+  }
+
   .animate-gradient {
     background-size: 300% 300%;
     animation: gradient 12s ease infinite;

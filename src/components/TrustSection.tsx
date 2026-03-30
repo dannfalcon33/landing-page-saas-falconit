@@ -62,10 +62,13 @@ const AnimatedStat: React.FC<{ stat: { value: string; label: string }, delay: nu
   );
 };
 
+import { FloatingSpheres } from "./FloatingSpheres";
+
 export const TrustSection = () => {
   return (
-    <section className="py-12 border-y border-[#1F3A5F]/20 bg-[#0B1622]/80 backdrop-blur-sm relative z-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 border-y border-white/5 bg-black relative overflow-hidden">
+      <FloatingSpheres />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-[#C0C6CF]/10">
           {stats.map((stat, idx) => (
             <AnimatedStat key={idx} stat={stat} delay={idx * 0.15} />

@@ -6,6 +6,7 @@ import {
   Activity,
   ShieldCheck,
   Briefcase,
+  GraduationCap,
 } from "lucide-react";
 import {
   Plan,
@@ -18,15 +19,18 @@ import {
 } from "./types";
 
 export const navLinks: NavLink[] = [
-  { label: "Nosotros", href: "#about" },
-  { label: "Servicios", href: "#solutions" },
-  { label: "Planes", href: "#plans" },
-  { label: "Casos de Uso", href: "#usecases" },
+  { label: "Home", href: "/" },
+  { label: "Nosotros", href: "/about" },
+  { label: "Servicios", href: "/services" },
+  { label: "Planes", href: "/plans" },
 ];
 
 export const stats: Stat[] = [
   { value: "+50", label: "Empresas activas protegidas" },
-  { value: "+2,000", label: "Incidencias resueltas sin interrupciones clínicas" },
+  {
+    value: "+2,000",
+    label: "Incidencias resueltas sin interrupciones clínicas",
+  },
   { value: "99.9%", label: "Disponibilidad operativa garantizada" },
 ];
 
@@ -150,16 +154,25 @@ export const useCases: UseCase[] = [
   {
     icon: ShieldCheck,
     title: "Clínicas y Consultorios",
-    description: "Cumplimiento y protección de datos|Garantizamos la protección de datos sensibles de pacientes y la disponibilidad de sistemas médicos críticos.",
+    description:
+      "Cumplimiento y protección de datos|Garantizamos la protección de datos sensibles de pacientes y la disponibilidad de sistemas médicos críticos.",
   },
   {
     icon: Briefcase,
     title: "Suites de Abogados",
-    description: "Seguridad documental total|Máxima seguridad y respaldo inquebrantable para documentos legales y confidenciales.",
+    description:
+      "Seguridad documental total|Máxima seguridad y respaldo inquebrantable para documentos legales y confidenciales.",
   },
   {
     icon: Activity,
     title: "PYMES",
-    description: "Operación continua sin interrupciones|Mantenemos tu operación sin interrupciones, permitiendo a tu equipo enfocarse en vender y crecer.",
+    description:
+      "Operación continua sin interrupciones|Mantenemos tu operación sin interrupciones, permitiendo a tu equipo enfocarse en vender y crecer.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Colegios",
+    description:
+      "Soporte para laboratorios y redes|Garantizamos la continuidad de laboratorios de computación, departamente de Administración y conectividad segura para docentes y alumnos.",
   },
 ];

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import { Link, useNavigate } from "react-router-dom";
 import { navLinks } from "../constant";
 import { Logo } from "./Logo";
 import { headerButtonClasses, buttonLargeClasses } from "./styles";
@@ -43,35 +44,34 @@ export const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-[#05070A]/90 backdrop-blur-md">
-      {/* Efecto brillo de espejo continuo cada 4 segundos */}
+    <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
+      {/* Efecto espejo ultra-brillante cada 4 segundos */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-[150px] h-full bg-gradient-to-r from-transparent via-[#C0C6CF]/20 to-transparent skew-x-[-20deg] animate-shine"></div>
+        <div className="absolute top-0 left-0 w-[100px] h-full bg-linear-to-r from-transparent via-white/60 to-transparent skew-x-[-25deg] animate-shine"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex justify-between items-center h-20">
-          <a
-            href="#"
-            onClick={scrollToTop}
-            className="flex items-center gap-3 group cursor-pointer relative z-50"
+          <Link
+            to="/"
+            className="flex items-center gap-3 group cursor-pointer relative z-50 px-4 py-2"
           >
-            <Logo className="w-10 h-10 lg:w-12 lg:h-12 group-hover:scale-105 transition-transform" />
-            <span className="font-serif text-2xl font-bold tracking-wider text-white group-hover:text-[#C0C6CF] transition-colors">
+            <Logo className="w-10 h-10 lg:w-12 lg:h-12 group-hover:scale-105 transition-transform relative z-10" />
+            <span className="font-serif text-2xl font-bold tracking-wider text-white group-hover:text-[#C0C6CF] transition-colors relative z-10">
               FALCON IT
             </span>
-          </a>
+          </Link>
 
           <nav className="hidden lg:flex gap-8">
             {navLinks.map((link, index) => (
-              <a
+              <Link
                 key={index}
-                href={link.href}
+                to={link.href}
                 className="text-sm font-medium text-[#8A9199] hover:text-[#C0C6CF] transition-colors relative group"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#C0C6CF] transition-all duration-300 group-hover:w-full"></span>
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -112,14 +112,15 @@ export const Header = () => {
             <nav className="flex flex-col gap-8 w-full max-w-sm text-center">
               {navLinks.map((link, index) => (
                 <div key={index} className="overflow-hidden">
-                  <motion.a
-                    variants={linkVariants}
-                    href={link.href}
-                    className="block text-2xl font-serif font-bold text-[#E2E8F0] hover:text-[#C0C6CF] transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.label}
-                  </motion.a>
+                  <motion.div variants={linkVariants}>
+                    <Link
+                      to={link.href}
+                      className="block text-2xl font-serif font-bold text-[#E2E8F0] hover:text-[#C0C6CF] transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
                 </div>
               ))}
               <div className="overflow-hidden mt-6">

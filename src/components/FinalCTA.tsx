@@ -3,10 +3,12 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 import { buttonLargeClasses } from "./styles";
 
+import { FloatingSpheres } from "./FloatingSpheres";
+
 export const FinalCTA = () => {
   return (
-    <section className="py-24 relative overflow-hidden bg-[#050505] border-t border-[#C0C6CF]/5">
-      <div className="absolute inset-0 bg-linear-to-br from-[#1F3A5F]/10 to-transparent"></div>
+    <section className="py-24 relative overflow-hidden bg-black border-t border-white/5">
+      <FloatingSpheres />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}

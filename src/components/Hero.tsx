@@ -1,21 +1,15 @@
 import React from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion } from "motion/react";
-import { Logo } from "./Logo";
 import { buttonLargeClasses } from "./styles";
+import { FloatingSpheres } from "./FloatingSpheres";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[100vh] flex flex-col justify-center pt-24 pb-20 overflow-hidden bg-[#05070A]">
-      <div className="absolute inset-0 bg-linear-to-br from-[#0B1622] via-[#1F3A5F]/20 to-[#05070A] animate-gradient -z-10"></div>
+    <section className="relative min-h-[100vh] flex flex-col justify-center pt-24 pb-20 overflow-hidden bg-black">
+      <FloatingSpheres />
 
-      {/* Glow secundario para darle un toque más metálico/profundo al header */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[300px] bg-[#1F3A5F]/5 blur-[120px] rounded-full pointer-events-none"></div>
-
-      {/* Emblema gigante de fondo (Watermark) transparente tipo Falcon IT */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.02] pointer-events-none flex items-center justify-center">
-        <Logo className="w-[400px] h-[400px] sm:w-[500px] sm:h-[500px] md:w-[800px] md:h-[800px]" />
-      </div>
+      <div className="absolute inset-0 bg-linear-to-br from-[#0B1622]/10 via-[#1F3A5F]/5 to-black -z-10"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <motion.h1
