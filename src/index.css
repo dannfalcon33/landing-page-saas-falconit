@@ -73,4 +73,8 @@
   .custom-scrollbar-thin::-webkit-scrollbar-thumb:hover {
     background: #3D7BFF;
   }
+
+  .animate-shine-6s {
+    animation: shine 6s infinite linear;
+  }
 }

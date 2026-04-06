@@ -11,7 +11,10 @@ export const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
     setIsOpen(false);
     if (href === "#") {
       e.preventDefault();
@@ -69,7 +72,7 @@ export const Header = () => {
 
           <div className="hidden lg:block">
             <Link to="/login" className={headerButtonClasses}>
-              Login
+              Accede a tu cuenta
             </Link>
           </div>
 
@@ -118,7 +121,7 @@ export const Header = () => {
                   onClick={() => setIsOpen(false)}
                   className={`${buttonLargeClasses} w-full text-base py-4 flex items-center justify-center`}
                 >
-                  Login
+                  Accede a tu cuenta
                 </Link>
               </div>
             </nav>
