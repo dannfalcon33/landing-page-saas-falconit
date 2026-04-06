@@ -438,14 +438,14 @@ export default function Billing() {
 
         <h3 className="text-sm font-black text-[#8A9199] uppercase tracking-[0.2em] mb-6">Resumen de la orden</h3>
         
-        <div className="bg-black/40 border border-white/5 rounded-3xl p-8 mb-8 backdrop-blur-xl relative overflow-hidden group">
+        <div className="bg-[#050505] border border-white/5 rounded-3xl p-8 mb-8 backdrop-blur-xl relative overflow-hidden group shadow-2xl">
           <div className="absolute -top-10 -right-10 opacity-[0.03] rotate-12 group-hover:scale-110 transition-transform duration-700">
             <Logo className="w-48 h-48" />
           </div>
           
           <div className="flex justify-between items-start mb-8 relative z-10">
             <div>
-              <span className="inline-block px-3 py-1 bg-[#3D7BFF]/20 text-[#3D7BFF] text-[10px] font-black uppercase tracking-widest rounded-full mb-3">Enterprise B2B</span>
+              <span className="inline-block px-3 py-1 bg-[#1F3A5F] text-[#3D7BFF] text-[10px] font-black uppercase tracking-widest rounded-full mb-3 border border-[#3D7BFF]/20">Enterprise B2B</span>
               <h4 className="text-3xl font-serif font-bold text-white tracking-tight">{plan.name}</h4>
             </div>
             <div className="text-right">
@@ -454,17 +454,36 @@ export default function Billing() {
             </div>
           </div>
           
-          <ul className="space-y-4 mb-2 relative z-10">
-            {plan.features.slice(0, 3).map((feature, i) => (
-              <li key={i} className="flex items-center gap-3 text-sm text-[#C0C6CF] font-medium">
-                <Check className="w-5 h-5 text-emerald-500 shrink-0" />
-                {feature}
-              </li>
-            ))}
-          </ul>
+          {/* Contenedor de especificaciones con scroll refinado */}
+          <div className="relative">
+            <h5 className="text-[10px] font-black uppercase tracking-[0.2em] text-[#3D7BFF] mb-4">Alcance Operativo Completo</h5>
+            
+            <div className="max-h-[300px] overflow-y-auto pr-4 custom-scrollbar-thin space-y-3">
+              {[
+                { label: "Público Objetivo", value: plan.name === "Plan Pymes" ? "Pequeñas empresas" : plan.name === "Plan Empresa" ? "PYMES operativas" : "Empresas críticas" },
+                { label: "Soporte Remoto", value: plan.name === "Plan Pymes" ? "Limitado" : plan.name === "Plan Empresa" ? "Prioritario" : "VIP Prioritario" },
+                { label: "Visitas Presenciales", value: plan.name === "Plan Pymes" ? "2 mensuales" : plan.name === "Plan Empresa" ? "4 mensuales" : "Según necesidad" },
+                { label: "Tiempo de Respuesta", value: plan.name === "Plan Pymes" ? "24–48 horas" : plan.name === "Plan Empresa" ? "12–24 horas" : "4–8 horas" },
+                { label: "Mantenimiento", value: plan.name === "Plan Pymes" ? "Correctivo" : plan.name === "Plan Empresa" ? "Preventivo + Correctivo" : "Optimización Continua" },
+                { label: "Respaldo en Nube", value: plan.name === "Plan Pymes" ? "No Incluido" : plan.name === "Plan Empresa" ? "Gestión Incluida" : "Gestión + Verificación" },
+                { label: "Backup Local", value: plan.name === "Plan Pymes" ? "Básico" : "Incluido + Gestión" },
+                { label: "Control de Backups", value: plan.name === "Plan Pymes" ? "No" : plan.name === "Plan Empresa" ? "Básico" : "Periódico" },
+                { label: "Asesoría Técnica", value: plan.name === "Plan Pymes" ? "No" : plan.name === "Plan Empresa" ? "Básica" : "Continua VIP" },
+                { label: "Monitoreo", value: plan.name === "Plan Pymes" ? "No" : plan.name === "Plan Empresa" ? "Básico" : "Activo 24/7" },
+              ].map((spec, i) => (
+                <div key={i} className="flex justify-between items-center text-[11px] border-b border-white/5 pb-3 last:border-0 transition-all hover:bg-white/5 rounded-lg px-2 py-1 group/spec">
+                  <span className="text-[#8A9199] font-medium group-hover/spec:text-[#C0C6CF]">{spec.label}</span>
+                  <span className="text-white font-bold">{spec.value}</span>
+                </div>
+              ))}
+            </div>
+            
+            {/* Efecto de desvanecimiento para indicar más contenido */}
+            <div className="absolute bottom-0 left-0 w-full h-8 bg-linear-to-t from-[#050505] to-transparent pointer-events-none opacity-50"></div>
+          </div>
         </div>
 
-        <div className="border-t border-white/5 pt-8 flex justify-between items-center mb-12">
+        <div className="border-t border-white/5 pt-8 flex justify-between items-center mb-10">
           <span className="text-lg text-[#C0C6CF] font-bold">Total a pagar hoy</span>
           <span className="text-4xl font-serif font-bold text-white shadow-sm">${plan.price}.00</span>
         </div>

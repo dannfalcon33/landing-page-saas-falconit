@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
 import { plans } from "../constant";
@@ -50,7 +50,7 @@ export const PlansSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className={`relative p-8 rounded-[2rem] border ${
+              className={`relative p-8 rounded-4xl border ${
                 plan.popular 
                   ? "bg-black border-white/20 shadow-[0_0_30px_rgba(192,198,207,0.1)] scale-100 lg:scale-[1.05] z-10" 
                   : "bg-white/5 border-white/5"
@@ -58,7 +58,7 @@ export const PlansSection = () => {
             >
               {/* Contenedor interno para efectos de desbordamiento (Brillo y Marca de agua) */}
               {plan.popular && (
-                <div className="absolute inset-0 rounded-[2rem] overflow-hidden pointer-events-none">
+                <div className="absolute inset-0 rounded-4xl overflow-hidden pointer-events-none">
                   {/* Brillo para plan destacado */}
                   <div className="absolute inset-0 z-0">
                     <div className="absolute top-0 left-0 w-[150px] h-full bg-linear-to-r from-transparent via-white/10 to-transparent skew-x-[-20deg] animate-shine"></div>
@@ -123,6 +123,23 @@ export const PlansSection = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <a
+            href="/planes.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-[#8A9199] hover:text-white transition-colors text-sm font-bold uppercase tracking-wider group"
+          >
+            <span>Ver tabla comparativa detallada</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );

@@ -23,6 +23,7 @@ export const navLinks: NavLink[] = [
   { label: "Nosotros", href: "#about" },
   { label: "Servicios", href: "#solutions" },
   { label: "Planes", href: "#plans" },
+  { label: "Preguntas", href: "#faq" },
 ];
 
 export const stats: Stat[] = [
@@ -95,25 +96,26 @@ export const plans: Plan[] = [
     target: "Para empresas que necesitan soporte esencial",
     description: "Soporte esencial para mantener tu operación en marcha.",
     features: [
-      "Soporte remoto",
-      "2 Visitas presenciales al mes",
-      "Mantenimiento básico",
-      "Tiempo de respuesta 24-48 horas",
+      "Soporte técnico remoto",
+      "2 Visitas presenciales mensuales",
+      "Respuesta en 24-48 horas",
+      "Mantenimiento correctivo básico",
+      "Backup local gestionado",
     ],
   },
   {
-    name: "Plan Empresarial",
+    name: "Plan Empresa",
     price: "80",
     popular: true,
-    target: "Para empresas que buscan estabilidad operativa",
+    target: "Para PYMES operativas",
     description: "Cobertura completa y mantenimiento proactivo.",
     features: [
-      "Soporte prioritario",
-      "4 Visitas presenciales al mes",
-      "Mantenimiento correctivo + preventivo",
-      "Optimización continua",
-      "Backups gestionados en la nube",
-      "Tiempo de respuesta 12-24 horas",
+      "Soporte remoto prioritario",
+      "4 Visitas presenciales mensuales",
+      "Mantenimiento preventivo + correctivo",
+      "Optimización y limpieza de sistemas",
+      "Backups diarios en la nube",
+      "Respuesta en 12-24 horas",
     ],
   },
   {
@@ -123,11 +125,11 @@ export const plans: Plan[] = [
     description: "Máxima prioridad y asesoría continua para tu negocio.",
     features: [
       "Soporte VIP Prioritario",
-      "Visitas segun necesidad",
+      "Visitas según necesidad",
       "Mantenimiento completo + optimizado",
-      "Asesoria Periodica",
-      "Backups gestionados en la nube supervisados",
-      "Tiempo de respuesta inmediata",
+      "Monitoreo activo de infraestructura",
+      "Backups con verificación periódica",
+      "Respuesta inmediata VIP",
     ],
   },
 ];

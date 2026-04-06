@@ -59,4 +59,18 @@
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
   }
+
+  .custom-scrollbar-thin::-webkit-scrollbar {
+    width: 3px;
+  }
+  .custom-scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #1F3A5F;
+    border-radius: 10px;
+  }
+  .custom-scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #3D7BFF;
+  }
 }

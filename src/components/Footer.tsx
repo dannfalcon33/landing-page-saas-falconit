@@ -34,18 +34,23 @@ export const Footer = () => {
             <h4 className="text-white font-semibold mb-4">Servicios</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="hover:text-[#C0C6CF] transition-colors">
+                <a
+                  href="/planes.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#C0C6CF] transition-colors"
+                >
                   Detalle de Planes
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#C0C6CF] transition-colors">
-                  Soporte Remoto
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#C0C6CF] transition-colors">
-                  Soporte Presencial
+                <a
+                  href="/servicios.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#C0C6CF] transition-colors"
+                >
+                  Detalles de Servicios
                 </a>
               </li>
             </ul>
