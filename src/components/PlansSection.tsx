@@ -1,11 +1,19 @@
 import React from "react";
 import { CheckCircle2 } from "lucide-react";
 import { motion } from "motion/react";
+import { useNavigate } from "react-router-dom";
 import { plans } from "../constant";
 import { Logo } from "./Logo";
 import { FloatingSpheres } from "./FloatingSpheres";
+import { Plan } from "../types";
 
 export const PlansSection = () => {
+  const navigate = useNavigate();
+
+  const handleSelectPlan = (plan: Plan) => {
+    navigate("/billing", { state: { plan } });
+  };
+
   return (
     <section id="plans" className="py-24 bg-black relative overflow-hidden">
       <FloatingSpheres />
@@ -98,6 +106,7 @@ export const PlansSection = () => {
               </ul>
 
               <button
+                onClick={() => handleSelectPlan(plan)}
                 className={`w-full py-4 rounded-full font-bold transition-all duration-300 relative z-10 ${
                   plan.popular 
                     ? "bg-white text-black hover:bg-gray-200" 

@@ -6,7 +6,7 @@ import { FloatingSpheres } from "./FloatingSpheres";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[100vh] flex flex-col justify-center pt-24 pb-20 overflow-hidden bg-black">
+    <section className="relative min-h-screen flex flex-col justify-center pt-24 pb-20 overflow-hidden bg-black">
       <FloatingSpheres />
 
       <div className="absolute inset-0 bg-linear-to-br from-[#0B1622]/10 via-[#1F3A5F]/5 to-black -z-10"></div>
@@ -61,10 +61,15 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="flex flex-col sm:flex-row justify-center items-center gap-6"
         >
-          <button className={buttonLargeClasses}>
+          <a
+            href="https://wa.me/584220331995?text=Quiero%20agendar%20una%20visita%20de%20diagnostico"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={buttonLargeClasses}
+          >
             Agenda diagnóstico gratuito{" "}
             <ArrowRight className="w-5 h-5 opacity-80" />
-          </button>
+          </a>
           <a
             href="#plans"
             className="px-8 py-4 bg-transparent border border-[#8A9199]/30 text-[#C0C6CF] font-semibold rounded-full hover:bg-[#8A9199]/10 hover:border-[#C0C6CF]/60 transition-colors flex items-center justify-center"

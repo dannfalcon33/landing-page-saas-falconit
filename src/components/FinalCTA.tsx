@@ -26,9 +26,14 @@ export const FinalCTA = () => {
           <p className="text-[#8A9199] text-xl mb-10 max-w-2xl mx-auto font-medium">
             Agenda tu diagnóstico gratuito y detecta riesgos antes de que afecten tu negocio.
           </p>
-          <button className={`${buttonLargeClasses} mx-auto`}>
+          <a
+            href="https://wa.me/584220331995?text=Quiero%20agendar%20una%20visita%20de%20diagnostico"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${buttonLargeClasses} mx-auto`}
+          >
             Agendar Evaluación Gratuita <ArrowRight className="w-5 h-5" />
-          </button>
+          </a>
           <p className="mt-6 text-sm text-[#8A9199] flex items-center justify-center gap-2">
             <span className="w-2 h-2 rounded-full bg-green-500"></span> Sin
             compromiso. Sin tarjeta de crédito.

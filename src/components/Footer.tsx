@@ -1,6 +1,17 @@
 import React from "react";
-import { Copy, Linkedin, Twitter } from "lucide-react";
+import { Linkedin, Youtube } from "lucide-react";
 import { Logo } from "./Logo";
+
+const TikTokIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.47-.13-.08-.26-.17-.38-.26v5.48c.01 1.17-.2 2.35-.66 3.43-.82 2.04-2.6 3.77-4.75 4.39-2.03.58-4.3.39-6.17-.58-2.13-1.1-3.77-3.26-4.07-5.7-.36-3 1.23-6.02 3.96-7.19a6.002 6.002 0 0 1 5.9.56V.02z" />
+  </svg>
+);
 
 export const Footer = () => {
   return (
@@ -24,17 +35,17 @@ export const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="#" className="hover:text-[#C0C6CF] transition-colors">
+                  Detalle de Planes
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#C0C6CF] transition-colors">
                   Soporte Remoto
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-[#C0C6CF] transition-colors">
-                  Ciberseguridad
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#C0C6CF] transition-colors">
-                  Backups Cloud
+                  Soporte Presencial
                 </a>
               </li>
             </ul>
@@ -42,26 +53,52 @@ export const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-4">Contacto</h4>
             <ul className="space-y-2 text-sm">
-              <li>soporte@falconit.com</li>
-              <li>+1 (555) 123-4567</li>
+              <li>yoshuasoto54@gmail.com</li>
+              <li>+58 (422) 033-1995</li>
               <li className="flex gap-4 mt-4">
-                <a href="#" className="hover:text-[#C0C6CF] transition-colors">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="#" className="hover:text-[#C0C6CF] transition-colors">
-                  <Twitter className="w-5 h-5" />
+                <a
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  aria-label="YouTube"
+                >
+                  <Youtube className="w-5 h-5" />
+                </a>
+                <a
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  aria-label="TikTok"
+                >
+                  <TikTokIcon className="w-5 h-5" />
                 </a>
               </li>
             </ul>
           </div>
         </div>
         <div className="pt-8 border-t border-[#1F3A5F]/10 text-sm flex flex-col md:flex-row justify-between items-center opacity-70">
-          <p>© 2024 Falcon IT. Todos los derechos reservados.</p>
+          <p>© 2026 Falcon IT. Todos los derechos reservados.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition-colors">
+            <a
+              href="/privacidad.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
               Privacidad
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <a
+              href="/terminos.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
               Términos
             </a>
           </div>

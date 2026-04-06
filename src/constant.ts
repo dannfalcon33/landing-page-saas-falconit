@@ -19,10 +19,10 @@ import {
 } from "./types";
 
 export const navLinks: NavLink[] = [
-  { label: "Home", href: "/" },
-  { label: "Nosotros", href: "/about" },
-  { label: "Servicios", href: "/services" },
-  { label: "Planes", href: "/plans" },
+  { label: "Home", href: "#" },
+  { label: "Nosotros", href: "#about" },
+  { label: "Servicios", href: "#solutions" },
+  { label: "Planes", href: "#plans" },
 ];
 
 export const stats: Stat[] = [
@@ -96,8 +96,9 @@ export const plans: Plan[] = [
     description: "Soporte esencial para mantener tu operación en marcha.",
     features: [
       "Soporte remoto",
-      "Diagnóstico básico",
-      "Tiempo de respuesta estándar",
+      "2 Visitas presenciales al mes",
+      "Mantenimiento básico",
+      "Tiempo de respuesta 24-48 horas",
     ],
   },
   {
@@ -108,9 +109,11 @@ export const plans: Plan[] = [
     description: "Cobertura completa y mantenimiento proactivo.",
     features: [
       "Soporte prioritario",
-      "Mantenimiento preventivo",
+      "4 Visitas presenciales al mes",
+      "Mantenimiento correctivo + preventivo",
       "Optimización continua",
-      "Backups gestionados",
+      "Backups gestionados en la nube",
+      "Tiempo de respuesta 12-24 horas",
     ],
   },
   {
@@ -119,24 +122,31 @@ export const plans: Plan[] = [
     target: "Para operaciones críticas",
     description: "Máxima prioridad y asesoría continua para tu negocio.",
     features: [
-      "Soporte total",
-      "Asesoría continua",
-      "Respaldo avanzado",
-      "Atención prioritaria inmediata",
+      "Soporte VIP Prioritario",
+      "Visitas segun necesidad",
+      "Mantenimiento completo + optimizado",
+      "Asesoria Periodica",
+      "Backups gestionados en la nube supervisados",
+      "Tiempo de respuesta inmediata",
     ],
   },
 ];
 
 export const faqs: FAQ[] = [
   {
+    question: "¿De que va el servicio?",
+    answer:
+      "Somos una servicio de Soporte IT para empresas y pymes por un unico pago por suscripcion, nos encargamos de mantener tu infraestructura tecnológica funcionando correctamente, desde redes hasta computadoras y servidores.",
+  },
+  {
+    question: "¿Qué incluye el servicio?",
+    answer:
+      "Sí, dependiendo del plan elegido y la naturaleza del problema. Ciertas incidencias de hardware o red requieren nuestra asistencia in situ.",
+  },
+  {
     question: "¿Qué pasa si tengo una emergencia?",
     answer:
       "Nuestro equipo responde a incidencias críticas en minutos, priorizando de manera inmediata cualquier afectación a la continuidad de tu negocio.",
-  },
-  {
-    question: "¿Incluye visitas presenciales?",
-    answer:
-      "Sí, dependiendo del plan elegido y la naturaleza del problema. Ciertas incidencias de hardware o red requieren nuestra asistencia in situ.",
   },
   {
     question: "¿Cómo funcionan los backups?",
@@ -147,6 +157,26 @@ export const faqs: FAQ[] = [
     question: "¿Qué tiempo de respuesta manejan?",
     answer:
       "Manejamos diferentes ANS (Acuerdos de Nivel de Servicio). Para planes empresariales y corporativos el tiempo puede variar desde unos pocos minutos hasta un par de horas dependiendo de la urgencia.",
+  },
+  {
+    question: "¿Como funciona el diagnostico gratuito?",
+    answer:
+      "Puede agendar un dia para ir a su empresa para hacer un analisis de su infraestructura tecnológica y detectar posibles problemas de forma gratuita y sin compromiso.",
+  },
+  {
+    question: "¿Hay pago adicionales en el servicio por suscripcion?",
+    answer: "No, el servicio es por suscripcion y no hay pagos adicionales.",
+  },
+  {
+    question:
+      "¿Que pasa si cancelo faltando semanas o dias para completar el mes?",
+    answer:
+      "El pago cubre el mes, puede cancelar cuando quiera pero cumplimos con el mes completo.",
+  },
+  {
+    question: "¿Que pasa si quiero renovar o pagar meses adelantados?",
+    answer:
+      "El pago es mensual, se le notificara que debe renovar 3 dias antes de su fecha de vencimiento, luego debo renovar su plan o actualizar a uno mayor si lo desea.",
   },
 ];
 

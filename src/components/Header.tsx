@@ -1,46 +1,36 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { navLinks } from "../constant";
 import { Logo } from "./Logo";
 import { headerButtonClasses, buttonLargeClasses } from "./styles";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const scrollToTop = (e: React.MouseEvent) => {
-    e.preventDefault();
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     setIsOpen(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+    if (href === "#") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      navigate("/");
+      return;
+    }
 
-  const menuVariants = {
-    closed: {
-      x: "100%",
-      transition: {
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1],
-        staggerChildren: 0.1,
-        staggerDirection: -1,
-        when: "afterChildren",
-      },
-    },
-    open: {
-      x: 0,
-      transition: {
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1],
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-        when: "beforeChildren",
-      },
-    },
-  };
-
-  const linkVariants = {
-    closed: { y: -20, opacity: 0, transition: { duration: 0.3 } },
-    open: { y: 0, opacity: 1, transition: { duration: 0.4 } },
+    if (location.pathname !== "/") {
+      // Si no estamos en el home, navegamos al home primero
+    } else {
+      // Si estamos en el home, scroll suave
+      e.preventDefault();
+      const targetId = href.replace("#", "");
+      const elem = document.getElementById(targetId);
+      if (elem) {
+        elem.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   };
 
   return (
@@ -54,6 +44,7 @@ export const Header = () => {
         <div className="flex justify-between items-center h-20">
           <Link
             to="/"
+            onClick={(e) => handleNavClick(e as any, "#")}
             className="flex items-center gap-3 group cursor-pointer relative z-50 px-4 py-2"
           >
             <Logo className="w-10 h-10 lg:w-12 lg:h-12 group-hover:scale-105 transition-transform relative z-10" />
@@ -64,21 +55,22 @@ export const Header = () => {
 
           <nav className="hidden lg:flex gap-8">
             {navLinks.map((link, index) => (
-              <Link
+              <a
                 key={index}
-                to={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="text-sm font-medium text-[#8A9199] hover:text-[#C0C6CF] transition-colors relative group"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#C0C6CF] transition-all duration-300 group-hover:w-full"></span>
-              </Link>
+              </a>
             ))}
           </nav>
 
           <div className="hidden lg:block">
-            <button className={headerButtonClasses}>
-              Agenda diagnóstico gratuito
-            </button>
+            <Link to="/login" className={headerButtonClasses}>
+              Login
+            </Link>
           </div>
 
           {!isOpen && (
@@ -95,10 +87,10 @@ export const Header = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial="closed"
-            animate="open"
-            exit="closed"
-            variants={menuVariants}
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 top-0 left-0 w-full h-screen bg-[#05070A] z-40 flex flex-col justify-center items-center px-4"
           >
             {/* Botón X de cierre explícito para el menú responsive */}
@@ -111,25 +103,23 @@ export const Header = () => {
 
             <nav className="flex flex-col gap-8 w-full max-w-sm text-center">
               {navLinks.map((link, index) => (
-                <div key={index} className="overflow-hidden">
-                  <motion.div variants={linkVariants}>
-                    <Link
-                      to={link.href}
-                      className="block text-2xl font-serif font-bold text-[#E2E8F0] hover:text-[#C0C6CF] transition-colors"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  </motion.div>
-                </div>
-              ))}
-              <div className="overflow-hidden mt-6">
-                <motion.button
-                  variants={linkVariants}
-                  className={`${buttonLargeClasses} w-full text-base py-4 hover:scale-100 flex items-center justify-center`}
+                <a
+                  key={index}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="block text-2xl font-serif font-bold text-[#E2E8F0] hover:text-[#C0C6CF] transition-colors"
                 >
-                  Agenda diagnóstico gratuito
-                </motion.button>
+                  {link.label}
+                </a>
+              ))}
+              <div className="mt-6">
+                <Link
+                  to="/login"
+                  onClick={() => setIsOpen(false)}
+                  className={`${buttonLargeClasses} w-full text-base py-4 flex items-center justify-center`}
+                >
+                  Login
+                </Link>
               </div>
             </nav>
           </motion.div>
